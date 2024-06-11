@@ -1,9 +1,10 @@
 import requests
 import json
+import time
 
 # WhatsApp API endpoint and access token
-api_url = "https://graph.facebook.com/v15.0/<phone_number_id>/messages"
-access_token = "YOUR_ACCESS_TOKEN"
+api_url = "https://graph.facebook.com/v19.0/112307325194751/messages"
+access_token = "ACCESS_TOKEN"
 
 # Header for the HTTP request
 headers = {
@@ -12,11 +13,11 @@ headers = {
 }
 
 # List of phone numbers to send the message to
-phone_numbers = ["<recipient_phone_number_1>", "<recipient_phone_number_2>", "<recipient_phone_number_3>"]
+phone_numbers = ['', '']
 
 # Template details
-template_name = "<your_template_name>"
-template_language = "en_US"
+template_name = "TEMPLATE_NAME"
+template_language = "en"
 # template_parameters = [
 #     {"type": "text", "text": "<variable_1_value>"},
 #     {"type": "text", "text": "<variable_2_value>"}
@@ -52,3 +53,4 @@ def send_template_message(phone_number):
 # Send messages to all phone numbers in the list
 for number in phone_numbers:
     send_template_message(number)
+    time.sleep(1)
